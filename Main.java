@@ -1,15 +1,3 @@
-
-
-/**
- * Samantha Goodwin
- * Software Development
- * January 28, 2024
- *
- * Class Name: Main
- * 
- * This class represents what the user will see when interacting with the LMS.
- * It contains printed prompts to show the user.
- */
 import java.util.Scanner;
 
 public class Main {
