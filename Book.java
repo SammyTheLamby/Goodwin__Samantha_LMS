@@ -4,7 +4,7 @@
  * January 28, 2024
  *
  * Class Name: Book
- * 
+ *
  * This class represents a Book object in the system.
  * It contains information about the book such as its ID, title, and author.
  */
