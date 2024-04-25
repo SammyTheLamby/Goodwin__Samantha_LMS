@@ -12,46 +12,32 @@ public class Book {
     private int id;
     private String title;
     private String author;
+    private boolean checkedOut;
 
-    /**
-     * Constructor
-     * 
-     * @param id     ID# of the book.
-     * @param title  title of the book.
-     * @param author author of the book.
-     */
     public Book(int id, String title, String author) {
         this.id = id;
         this.title = title;
         this.author = author;
+        this.checkedOut = false;
     }
 
-    // Getter methods
-
-    /**
-     * Gets the ID of the book.
-     * 
-     * @return The ID of the book.
-     */
     public int getId() {
         return id;
     }
 
-    /**
-     * Gets the title of the book.
-     * 
-     * @return The title of the book.
-     */
     public String getTitle() {
         return title;
     }
 
-    /**
-     * Gets the author of the book.
-     * 
-     * @return The author of the book.
-     */
     public String getAuthor() {
         return author;
+    }
+
+    public boolean isCheckedOut() {
+        return checkedOut;
+    }
+
+    public void setCheckedOut(boolean checkedOut) {
+        this.checkedOut = checkedOut;
     }
 }
