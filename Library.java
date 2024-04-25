@@ -1,3 +1,13 @@
+/**
+ * Samantha Goodwin
+ * Software Development
+ * January 28, 2024
+ *
+ * Class Name: Library
+ * 
+ * This class provides user with a way to check in and check out books.
+ * It contains information about removing or adding.
+ */
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
