@@ -1,67 +1,89 @@
-// LibraryManagementSystemGUI.java
-/**
- * 
- *
- * Class Name: LibraryManagementSystemGUI
- * 
- * This class represents the GUI for the Library Management System.
- * It allows users to interact with the system to perform various tasks.
- */
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 public class LibraryManagementSystemGUI extends JFrame {
-    // GUI components declaration
+    private Library library;
+    private JPanel mainPanel;
+    private JTextField txtTitle;
+    private JTextField txtAuthor;
+    private JTextField txtBarcode;
+    private JButton btnAddBook;
+    private JButton btnRemoveBook;
+    private JButton btnCheckOut;
+    private JButton btnCheckIn;
+    private JTable tblBooks;
 
     public LibraryManagementSystemGUI() {
-        // GUI initialization
+        super("Library Management System");
 
-        // Action listeners for buttons
-        btnOpenFile.addActionListener(e -> openFile());
-        btnPrintDatabase.addActionListener(e -> printDatabase());
-        btnRemoveByBarcode.addActionListener(e -> removeByBarcode());
-        btnRemoveByTitle.addActionListener(e -> removeByTitle());
-        btnCheckOut.addActionListener(e -> checkOut());
-        btnCheckIn.addActionListener(e -> checkIn());
-        btnExit.addActionListener(e -> exit());
+        // Initialize Library
+        library = new Library();
+
+        // Initialize components
+        createUIComponents();
+
+        // Add action listeners
+        btnAddBook.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String title = txtTitle.getText();
+                String author = txtAuthor.getText();
+                int barcode = Integer.parseInt(txtBarcode.getText());
+
+                // Add the book to the library
+                library.addBook(new Book(barcode, title, author));
+
+                // Display success message
+                JOptionPane.showMessageDialog(null, "Book added successfully!");
+
+                // Clear text fields
+                txtTitle.setText("");
+                txtAuthor.setText("");
+                txtBarcode.setText("");
+            }
+        });
+
+        // Add components to frame
+        mainPanel.setLayout(new GridLayout(0, 2));
+        mainPanel.add(new JLabel("Title: "));
+        mainPanel.add(txtTitle);
+        mainPanel.add(new JLabel("Author: "));
+        mainPanel.add(txtAuthor);
+        mainPanel.add(new JLabel("Barcode: "));
+        mainPanel.add(txtBarcode);
+        mainPanel.add(btnAddBook);
+        mainPanel.add(btnRemoveBook);
+        mainPanel.add(btnCheckOut);
+        mainPanel.add(btnCheckIn);
+        mainPanel.add(new JScrollPane(tblBooks));
+
+        getContentPane().add(mainPanel);
+        pack(); // Adjust frame size
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null); // Center frame on screen
     }
 
-    // Method to open file and add books to database
-    private void openFile() {
-        // Implementation to read file and add books
+    private void createUIComponents() {
+        // Custom Create components
+        mainPanel = new JPanel();
+        txtTitle = new JTextField(20);
+        txtAuthor = new JTextField(20);
+        txtBarcode = new JTextField(20);
+        btnAddBook = new JButton("Add Book");
+        btnRemoveBook = new JButton("Remove Book");
+        btnCheckOut = new JButton("Check Out");
+        btnCheckIn = new JButton("Check In");
+        tblBooks = new JTable();
     }
 
-    // Method to print database to screen
-    private void printDatabase() {
-        // Implementation to display database
-    }
-
-    // Method to remove book by barcode
-    private void removeByBarcode() {
-        // Implementation to remove book by barcode
-    }
-
-    // Method to remove book by title
-    private void removeByTitle() {
-        // Implementation to remove book by title
-    }
-
-    // Method to check out a book
-    private void checkOut() {
-        // Implementation to check out a book
-    }
-
-    // Method to check in a book
-    private void checkIn() {
-        // Implementation to check in a book
-    }
-
-    // Method to exit the GUI
-    private void exit() {
-        // Implementation to close the GUI
-    }
-
-    // Main method to run the GUI
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            new LibraryManagementSystemGUI().setVisible(true);
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new LibraryManagementSystemGUI().setVisible(true);
+            }
         });
     }
 }
