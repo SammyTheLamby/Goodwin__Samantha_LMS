@@ -1,0 +1,2 @@
+This is version 1.0 of the Library Management System (LMS), a Java-based application designed to manage a library's collection of books. The system allows users to add books from a file, remove books by ID or title, and perform check-in and check-out operations. 
+The purpose of the Library Management System is to provide a user-friendly interface for library staff to manage the library's collection efficiently.
