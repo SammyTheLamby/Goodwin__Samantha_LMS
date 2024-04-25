@@ -1,73 +1,67 @@
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
+// LibraryManagementSystemGUI.java
+/**
+ * 
+ *
+ * Class Name: LibraryManagementSystemGUI
+ * 
+ * This class represents the GUI for the Library Management System.
+ * It allows users to interact with the system to perform various tasks.
+ */
 public class LibraryManagementSystemGUI extends JFrame {
-    private JPanel mainPanel;
-    private JTextField txtTitle;
-    private JTextField txtAuthor;
-    private JTextField txtBarcode;
-    private JButton btnAddBook;
-    private JButton btnRemoveBook;
-    private JButton btnCheckOut;
-    private JButton btnCheckIn;
-    private JTable tblBooks;
+    // GUI components declaration
 
     public LibraryManagementSystemGUI() {
-        setTitle("Library Management System");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setContentPane(mainPanel);
-        pack();
-        setLocationRelativeTo(null); // Center the window on the screen
+        // GUI initialization
 
-        // Action listener for the "Add Book" button
-        btnAddBook.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Add book functionality goes here
-                // Call methods from Library.java to add a book
-                // Update the table to display the updated list of books
-            }
-        });
-
-        // Action listener for the "Remove Book" button
-        btnRemoveBook.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Remove book functionality goes here
-                // Call methods from Library.java to remove a book
-                // Update the table to display the updated list of books
-            }
-        });
-
-        // Action listener for the "Check Out" button
-        btnCheckOut.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Check out functionality goes here
-                // Call methods from Library.java to check out a book
-                // Update the table to display the updated list of books
-            }
-        });
-
-        // Action listener for the "Check In" button
-        btnCheckIn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Check in functionality goes here
-                // Call methods from Library.java to check in a book
-                // Update the table to display the updated list of books
-            }
-        });
+        // Action listeners for buttons
+        btnOpenFile.addActionListener(e -> openFile());
+        btnPrintDatabase.addActionListener(e -> printDatabase());
+        btnRemoveByBarcode.addActionListener(e -> removeByBarcode());
+        btnRemoveByTitle.addActionListener(e -> removeByTitle());
+        btnCheckOut.addActionListener(e -> checkOut());
+        btnCheckIn.addActionListener(e -> checkIn());
+        btnExit.addActionListener(e -> exit());
     }
 
+    // Method to open file and add books to database
+    private void openFile() {
+        // Implementation to read file and add books
+    }
+
+    // Method to print database to screen
+    private void printDatabase() {
+        // Implementation to display database
+    }
+
+    // Method to remove book by barcode
+    private void removeByBarcode() {
+        // Implementation to remove book by barcode
+    }
+
+    // Method to remove book by title
+    private void removeByTitle() {
+        // Implementation to remove book by title
+    }
+
+    // Method to check out a book
+    private void checkOut() {
+        // Implementation to check out a book
+    }
+
+    // Method to check in a book
+    private void checkIn() {
+        // Implementation to check in a book
+    }
+
+    // Method to exit the GUI
+    private void exit() {
+        // Implementation to close the GUI
+    }
+
+    // Main method to run the GUI
     public static void main(String[] args) {
-        // Create and display the GUI
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new LibraryManagementSystemGUI().setVisible(true);
-            }
+        SwingUtilities.invokeLater(() -> {
+            new LibraryManagementSystemGUI().setVisible(true);
         });
     }
 }
