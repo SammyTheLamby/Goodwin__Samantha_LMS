@@ -1,3 +1,12 @@
+/**
+ * Samantha Goodwin
+ * Software Development
+ * January 28, 2024
+ *
+ * Class Name: LibraryTest
+ *
+ *
+ */
 public class LibraryTest {
     private Library library;
 
