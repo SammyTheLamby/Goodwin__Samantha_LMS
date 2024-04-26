@@ -1,3 +1,12 @@
+/**
+ * Samantha Goodwin
+ * Software Development
+ * January 28, 2024
+ *
+ * Class Name: Library
+ *
+ * 
+ */
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
