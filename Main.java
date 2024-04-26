@@ -1,5 +1,14 @@
-import java.util.Scanner;
 
+/**
+ * Samantha Goodwin
+ * Software Development
+ * January 28, 2024
+ *
+ * Class Name: Main
+ *
+ *
+ */
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         // Create a Library instance
