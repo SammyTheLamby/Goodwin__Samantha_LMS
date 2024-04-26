@@ -1,3 +1,12 @@
+/**
+ * Samantha Goodwin
+ * Software Development
+ * January 28, 2024
+ *
+ * Class Name: LibraryManagementSystemGUI
+ *
+ * 
+ */
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
